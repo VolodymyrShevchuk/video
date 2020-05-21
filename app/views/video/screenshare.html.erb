@@ -1,0 +1,32 @@
+<script type ="text/javascript">
+	var token = '<%= @token %>';
+	var name = '<%= @name %>';
+	var moderator_env_name = '<%= @moderator_name %>';
+	// reload page to render with variables
+	(function() {
+		if(window.localStorage) {
+			if(!localStorage.getItem('screenshareFirstLoad')) {
+				localStorage['screenshareFirstLoad'] = true;
+				window.location.reload();
+			} else
+				localStorage.removeItem('screenshareFirstLoad');
+		}
+	})();
+</script>
+
+<header>
+  <%= render partial: 'header' %>
+</header>
+
+<main class="app">
+  <div class="videos">
+    <div class="screenshare" id="screenshare"></div>
+    <div class="audio" id="audio"></div>
+  </div>
+
+  <aside class="chat">
+    <%= render partial: 'chat' %>
+  </aside>
+
+  <%= render partial: 'button-chat' %>
+</main>

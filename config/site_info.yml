@@ -1,0 +1,16 @@
+language: en
+lang_direction: ltr
+landing_page:
+  welcome_message:
+    text: 'Welcome to the Vonage Video Watch Party!'
+  name_form:
+    text: 'What is your name and the password for the party?'
+    name_placeholder_text: Your name here
+    password_placeholder_text: Password here
+    submit_button_text: Submit
+navbar:
+  title:
+    text: Vonage Video Watch Party
+text_chat:
+  submit_button_text: Submit
+  placeholder_text: 'Enter text here'
