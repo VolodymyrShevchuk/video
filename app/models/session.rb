@@ -1,7 +1,10 @@
 require 'opentok'
 
 class Session < ApplicationRecord
-  @opentok = OpenTok::OpenTok.new ENV['OPENTOK_API_KEY'], ENV['OPENTOK_API_SECRET']
+  @opentok = OpenTok::OpenTok.new(
+    Rails.application.credentials.vonage[:api_key],
+    Rails.application.credentials.vonage[:secret_key]
+  )
 
   def self.create_or_load_session_id
     if Session.any?
